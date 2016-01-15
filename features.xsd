@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified"
+    xmlns:main="http://main.com/" 
+    xmlns:features="http://features.com/" 
+    targetNamespace="http://features.com/"> 
+    
+    <xs:complexType name="Visual">
+        <xs:sequence>
+            <xs:element name="length">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="10"/>
+                        <xs:maxInclusive value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="width">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="10"/>
+                        <xs:maxInclusive value="100"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="material" type="features:Material"/>
+            <xs:element name="handle" type="features:Handle"/>
+            <xs:element name="wood" minOccurs="0" type="xs:string"/>
+            <xs:element name="drainage" type="features:Value"/>
+            <xs:element name="value" type="features:Value"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="Value">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yes"/>
+            <xs:enumeration value="no"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Handle">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="wooden"/>
+            <xs:enumeration value="plastic"/>
+            <xs:enumeration value="metal"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Material">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="steel"/>
+            <xs:enumeration value="cast iron"/>
+            <xs:enumeration value="metal"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

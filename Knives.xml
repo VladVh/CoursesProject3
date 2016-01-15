@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='knives.xsl'?>
+<main:knives 
+    xmlns:main="http://main.com/" 
+    xmlns:features="http://features.com/" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://main.com/ knives.xsd">
+    
+    <main:knife id="c001">
+        <main:type>knife</main:type>
+        <main:handy>1</main:handy>
+        <main:origin>Great Britain</main:origin>
+        <main:visual>
+            <features:length>15</features:length>
+            <features:width>30</features:width>
+            <features:material>steel</features:material>
+            <features:handle>wooden</features:handle>
+            <features:wood>oak</features:wood>
+            <features:drainage>yes</features:drainage>
+            <features:value>yes</features:value>
+        </main:visual>
+    </main:knife>
+    
+    <main:knife id="c002">
+        <main:type>dagger</main:type>
+        <main:handy>1</main:handy>
+        <main:origin>Japan</main:origin>
+        <main:visual>
+            <features:length>18</features:length>
+            <features:width>40</features:width>
+            <features:material>steel</features:material>
+            <features:handle>metal</features:handle>
+            <features:drainage>yes</features:drainage>
+            <features:value>no</features:value>
+        </main:visual>
+    </main:knife>
+    
+</main:knives>

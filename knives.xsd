@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    targetNamespace="http://main.com/"
+    xmlns:main="http://main.com/" 
+    xmlns:features="http://features.com/" >
+    
+    <xs:import schemaLocation="features.xsd" namespace="http://features.com/"/>
+    
+    <xs:element name="knives" type="main:Knives"/>
+    
+    <xs:complexType name="Knives">
+        <xs:sequence>
+            <xs:element name="knife" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="handy" type="main:Handy"/>
+                        <xs:element name="origin" type="xs:string"/>
+                        <xs:element name="visual" type="features:Visual"/>
+                    </xs:sequence>
+                    <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="Handy">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+</xs:schema>
